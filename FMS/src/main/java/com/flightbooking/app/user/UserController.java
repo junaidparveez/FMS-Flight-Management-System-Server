@@ -30,7 +30,7 @@ public class UserController {
 
 
     @GetMapping("/login")
-    public User logUser(@RequestParam String userName,@RequestParam String password){
+    public String logUser(@RequestParam String userName,@RequestParam String password){
 
         return userService.authenticateUser(userName,password);
     }

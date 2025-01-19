@@ -75,7 +75,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User authenticateUser(String userName, String password) {
+	public String authenticateUser(String userName, String password) {
 		User user = userRepo.findByUserName(userName);
 		
 		
@@ -84,8 +84,8 @@ public class UserServiceImpl implements UserService {
 //	String encryptedPasswordOfUser=	bCryptPasswordEncoder.encode(user.getPassword());
 //		String encryptedPasswordFromReq=bCryptPasswordEncoder.encode(password);
 		if (authentication.isAuthenticated()) {
-			jwtService.generateToken( userName);
-			return user;
+			return jwtService.generateToken( userName);
+			
 		}
 		return null;
 	}
