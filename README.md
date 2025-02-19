@@ -36,7 +36,7 @@ Swagger - API documentation
 🛠️ Installation & Setup
 
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/flight-management-system.git
+git clone https://github.com/junaidparveez/FMS-Flight-Management-System-Server.git
 cd flight-management-system
 
 2️⃣ Configure Database
