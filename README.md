@@ -63,30 +63,7 @@ Role-based access control (Admin, User)
 
 CORS Configured for frontend integration
 
-🔑 Generate Token (Example)
-
-Send a POST request to:
-
-http://localhost:8080/auth/login
-
-with:
-
-{
-  "username": "admin",
-  "password": "password"
-}
-
-Response:
-
-{
-  "token": "eyJhbGciOiJIUz..."
-}
-
-Use this token in the Authorization header for API requests.
-
-📄 API Endpoints
-
 
 📞 Contact
 
-For queries, reach out via:📧 junaidparwez@gmail.com🔗 LinkedIn
+For queries, reach out via:📧 junaidparwez@gmail.com
