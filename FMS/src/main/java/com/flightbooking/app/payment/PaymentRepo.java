@@ -1,4 +1,6 @@
 package com.flightbooking.app.payment;
 
-public interface PaymentRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PaymentRepo extends JpaRepository<Payment, Integer>{
 }

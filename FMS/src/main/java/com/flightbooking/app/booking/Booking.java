@@ -12,8 +12,6 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bookingId;
-//    private int flightId;
-//    private int passengerId;
     private String paymentStatus;
 
     @ManyToOne
