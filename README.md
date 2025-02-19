@@ -67,3 +67,9 @@ CORS Configured for frontend integration
 📞 Contact
 
 For queries, reach out via:📧 junaidparwez@gmail.com
+
+🛠️ Future Enhancements
+✈️ Flight Seat Selection
+📧 Email Notifications for Booking Confirmation
+💳 Payment Gateway Integration
+📊 Admin Dashboard for Reports
