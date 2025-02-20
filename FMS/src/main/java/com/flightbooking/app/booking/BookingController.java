@@ -8,6 +8,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/bookings")
 public class BookingController {
+	
     @Autowired
     private BookingService bookingService;
 

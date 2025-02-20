@@ -29,26 +29,57 @@ public class SecurityConfiguration {
 	@Autowired
 	JwtFilter jwtFilter;
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-        .csrf().disable()
-            .authorizeHttpRequests((authz) -> authz
-            	.requestMatchers("/user/login",
-            			"/user/register")
-            	.permitAll()
-                .anyRequest()
-                .authenticated()
-                
-            )
-          ;
-      
-        http.httpBasic(Customizer.withDefaults());
-        http.formLogin(Customizer.withDefaults());
-        http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        return http.build();
-    }
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http
+//        .csrf().disable()
+//            .authorizeHttpRequests((authz) -> authz
+//            	.requestMatchers(
+//            		    "/user/login",
+//            		    "/user/register",
+//            		    "/swagger-ui/**", 
+//            		    "/v3/api-docs/**",
+//            		    "/swagger-resources/**",
+//            		    "/webjars/**"
+//            		)
+//
+//            	.permitAll()
+//                .anyRequest()
+//                .authenticated()
+//                
+//            )
+//          ;
+//      
+//        http.httpBasic(Customizer.withDefaults());
+////        http.formLogin(Customizer.withDefaults());
+//        http.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+//        http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+//        return http.build();
+//    }
+	
+	@Bean
+	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+	    http
+	        .csrf(csrf -> csrf.disable())
+	        .authorizeHttpRequests(authz -> authz
+	            .requestMatchers(
+	                "/user/login",
+	                "/user/register",
+	                "/swagger-ui/**",
+	                "/v3/api-docs/**",
+	                "/swagger-resources/**",
+	                "/webjars/**"
+	            ).permitAll()
+	            .anyRequest().authenticated()
+	        )
+//	        .httpBasic(Customizer.withDefaults())
+//	        .formLogin(Customizer.withDefaults())  // Not necessary for JWT-based auth
+	        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+	        .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+
+	    return http.build();
+	}
+
 
     
 //    @Bean
