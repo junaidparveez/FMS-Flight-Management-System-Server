@@ -53,7 +53,7 @@ spring.jpa.hibernate.ddl-auto=update
 mvn spring-boot:run
 
 4️⃣ Access API (Swagger UI)
-http://localhost:8080/swagger-ui/
+http://localhost:8080/swagger-ui/index.html
 
 🔒 Authentication & Security
 
